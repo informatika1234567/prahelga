@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Antrian SPMB - SMA Negeri 1 Magetan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="header-text">
+                    <h1>SISTEM ANTRIAN SPMB</h1>
+                    <h2>SMA NEGERI 1 MAGETAN</h2>
+                    <p>Tahun Ajaran 2024/2025</p>
+                </div>
+            </div>
+            <div class="current-time">
+                <i class="fas fa-clock"></i>
+                <span id="time-display">00:00:00</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="control-panel">
+                    <h2><i class="fas fa-sliders-h"></i> Panel Kontrol Antrian</h2>
+                    
+                    <div class="queue-control">
+                        <div class="input-group">
+                            <label for="queue-number"><i class="fas fa-hashtag"></i> Nomor Antrian</label>
+                            <div class="input-with-buttons">
+                                <input type="number" id="queue-number" min="1" value="1">
+                                <div class="number-buttons">
+                                    <button id="decrease-btn" class="number-btn"><i class="fas fa-minus"></i></button>
+                                    <button id="increase-btn" class="number-btn"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="operator-select"><i class="fas fa-user-tie"></i> Tujuan Operator</label>
+                            <select id="operator-select">
+                                <option value="1">Operator 1 - Pendaftaran</option>
+                                <option value="2">Operator 2 - Verifikasi Dokumen</option>
+                                <option value="3">Operator 3 - Wawancara</option>
+                                <option value="4">Operator 4 - Tes Akademik</option>
+                                <option value="5">Operator 5 - Tes Psikologi</option>
+                                <option value="6">Operator 6 - Pengumuman Hasil</option>
+                                <option value="7">Operator 7 - Konsultasi</option>
+                                <option value="8">Operator 8 - Administrasi</option>
+                            </select>
+                        </div>
+                        
+                        <button id="call-btn" class="call-button">
+                            <i class="fas fa-bullhorn"></i> PANGGIL ANTRIAN
+                        </button>
+                        
+                        <div class="sound-control">
+                            <label for="volume-slider"><i class="fas fa-volume-up"></i> Volume Suara</label>
+                            <input type="range" id="volume-slider" min="0" max="100" value="70">
+                            <span id="volume-value">70%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-calls">
+                        <h3><i class="fas fa-history"></i> Panggilan Terakhir</h3>
+                        <div id="recent-calls-list">
+                            <p class="empty-message">Belum ada panggilan antrian</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="queue-display">
+                    <div class="current-call">
+                        <h2><i class="fas fa-bullhorn"></i> PANGGILAN SAAT INI</h2>
+                        <div id="current-queue-display" class="queue-number-display">
+                            <div class="placeholder">-</div>
+                        </div>
+                        <div id="current-operator-display" class="operator-display">
+                            <div class="placeholder">Belum ada panggilan</div>
+                        </div>
+                        <div class="counter-info">
+                            <p><i class="fas fa-info-circle"></i> Menuju loket yang sesuai</p>
+                        </div>
+                    </div>
+                    
+                    <div class="operators-grid">
+                        <h2><i class="fas fa-users"></i> STATUS OPERATOR</h2>
+                        <div class="grid-container" id="operators-grid">
+                            <!-- Operator cards will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="audio-controls">
+                <button id="test-voice-btn" class="test-button">
+                    <i class="fas fa-volume-up"></i> TEST SUARA
+                </button>
+                <button id="reset-btn" class="reset-button">
+                    <i class="fas fa-redo"></i> RESET ANTRIAN
+                </button>
+                <div class="voice-status">
+                    <i class="fas fa-microphone"></i>
+                    <span id="voice-status-text">Sistem Suara: Aktif</span>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p><i class="fas fa-copyright"></i> 2024 SMA Negeri 1 Magetan. Sistem Antrian SPMB.</p>
+            <p class="footer-info">Gedung A Lantai 1, Jl. Pahlawan No. 123, Magetan | Telp: (0351) 123456</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
